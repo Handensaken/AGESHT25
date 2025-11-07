@@ -15,6 +15,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private GameObject _playerCamera;
     [SerializeField] private Vector3 _distanceFromPlayer;
 
+
+    private bool _IsDead = false;
+    private bool _GameStarted = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,9 +32,15 @@ public class Movement : MonoBehaviour
         {
             _playerCamera.transform.parent = null;
         }
+        GameEventsManager.instance.OnPlayerDeath += OnPlayerDeath;
+    }
+    void OnDisable()
+    {
+        GameEventsManager.instance.OnPlayerDeath -= OnPlayerDeath;
     }
     void Update()
     {
+        if (_IsDead) return;
         Move();
         MoveCamera();
     }
@@ -60,5 +70,10 @@ public class Movement : MonoBehaviour
     public void AddAcceleration()
     {
         _AccelerationAmount++;
+    }
+    private void OnPlayerDeath()
+    {
+        _IsDead = true;
+        rb.linearVelocity = Vector3.zero;
     }
 }
