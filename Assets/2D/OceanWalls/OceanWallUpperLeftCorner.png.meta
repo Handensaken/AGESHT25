@@ -116,10 +116,10 @@ TextureImporter:
       name: OceanWallUpperLeftCorner_0
       rect:
         serializedVersion: 2
-        x: 870
+        x: 752
         y: 0
-        width: 630
-        height: 1191
+        width: 748
+        height: 1099
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
