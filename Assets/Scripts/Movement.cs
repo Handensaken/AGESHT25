@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private GameObject _playerCamera;
     [SerializeField] private Vector3 _distanceFromPlayer;
 
-
     private bool _IsDead = false;
     private bool _GameStarted = false;
 
@@ -33,10 +32,12 @@ public class Movement : MonoBehaviour
             _playerCamera.transform.parent = null;
         }
         GameEventsManager.instance.OnPlayerDeath += OnPlayerDeath;
+        GameEventsManager.instance.OnWin += OnWin;
     }
     void OnDisable()
     {
         GameEventsManager.instance.OnPlayerDeath -= OnPlayerDeath;
+        GameEventsManager.instance.OnWin -= OnWin;
     }
     void Update()
     {
@@ -72,6 +73,11 @@ public class Movement : MonoBehaviour
         _AccelerationAmount++;
     }
     private void OnPlayerDeath()
+    {
+        _IsDead = true;
+        rb.linearVelocity = Vector3.zero;
+    }
+    private void OnWin()
     {
         _IsDead = true;
         rb.linearVelocity = Vector3.zero;
