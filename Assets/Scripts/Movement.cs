@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,15 +6,24 @@ public class Movement : MonoBehaviour
 {
     [Header("MovementRelated")]
     [SerializeField] private float _upMovement;
-    //[SerializeField] private float _acceleration;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _horizontalSpeed;
+    [SerializeField] private List<float> _addedAccelerationPerCheckPoint = new List<float>();
+    private Rigidbody2D rb;
+    private int _AccelerationAmount = 0;
     private float _InputX;
     [Header("Camera")]
     [SerializeField] private Camera _playerCamera;
-    [SerializeField] private float _distanceFromPlayer;
+    [SerializeField] private Vector3 _distanceFromPlayer;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+
+        if (rb == null)
+        {
+            Debug.LogWarning("AAHHHHHHHHHHHHHH!!!!!!!!!!!! FUCK FUCK FUCK... WE DONT HAVE A RIGIDBODY 2D!!! WHO DA FUCK IS MAKING THIS GAME!!!!");
+        }
+
         if (_playerCamera != null)
         {
             _playerCamera.transform.parent = null;
@@ -30,13 +40,25 @@ public class Movement : MonoBehaviour
     }
     private void Move()
     {
-        transform.Translate(new Vector2(_InputX, _upMovement) * _speed * Time.deltaTime);
+        rb.linearVelocity = new Vector2(_InputX * _horizontalSpeed, GetSpeedUp());
     }
     private void MoveCamera()
     {
         if (_playerCamera != null)
         {
-            _playerCamera.transform.position =  new Vector3(0, transform.position.y, -_distanceFromPlayer);
+            _playerCamera.transform.position = new Vector3(0, transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
         }
+    }
+    private float GetSpeedUp()
+    {
+        if (_addedAccelerationPerCheckPoint.Count < _AccelerationAmount)
+        {
+            return _upMovement + _addedAccelerationPerCheckPoint[_addedAccelerationPerCheckPoint.Count];
+        }
+        return _upMovement + _addedAccelerationPerCheckPoint[_AccelerationAmount];
+    }
+    public void AddAcceleration()
+    {
+        _AccelerationAmount++;
     }
 }
