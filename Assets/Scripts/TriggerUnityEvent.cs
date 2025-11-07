@@ -5,8 +5,12 @@ using UnityEngine.Events;
 public class TriggerUnityEvent : MonoBehaviour
 {
     public UnityEvent unityAction;
-    public void OnTrggerEnter2D(Collision collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        unityAction.Invoke();
+        Debug.Log("hit");
+        if (collision.gameObject.tag == "Player")
+        {
+            unityAction.Invoke();
+        }
     }
 }

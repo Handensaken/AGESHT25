@@ -733,6 +733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerUnityAction
       objectReference: {fileID: 0}
+    - target: {fileID: 9150599919889259437, guid: e9bd51c81acd498479cc8e54e59a79c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -935,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377002772963028095, guid: 1ca1804ebb7561e4684933b71e84bd38, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.4
+      value: 10.7
       objectReference: {fileID: 0}
     - target: {fileID: 7377002772963028095, guid: 1ca1804ebb7561e4684933b71e84bd38, type: 3}
       propertyPath: m_LocalPosition.z

@@ -79,6 +79,7 @@ public class Movement : MonoBehaviour
     }
     private void OnWin()
     {
+        Debug.Log("win");
         _IsDead = true;
         rb.linearVelocity = Vector3.zero;
     }
