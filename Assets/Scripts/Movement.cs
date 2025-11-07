@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private int _AccelerationAmount = 0;
     private float _InputX;
     [Header("Camera")]
-    [SerializeField] private Camera _playerCamera;
+    [SerializeField] private GameObject _playerCamera;
     [SerializeField] private Vector3 _distanceFromPlayer;
 
     void Start()
