@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 8361220291173511344}
   - component: {fileID: 8633702029750043481}
   - component: {fileID: 551664110080413599}
+  - component: {fileID: 4166312570030001523}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -612,10 +613,13 @@ MonoBehaviour:
   - 3
   - 6
   _playerVisuals: {fileID: 1964964488993654017}
+  _acualVisuals: {fileID: 2812120257404848976}
   _setRotation: 60
   _rotationSpeed: 800
   _playerCamera: {fileID: 6505065173845598979}
   _distanceFromPlayer: {x: 0, y: 2, z: 10}
+  _restartCanvas: {fileID: 0}
+  _canvasDelay: 7
 --- !u!320 &551664110080413599
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -649,6 +653,14 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!81 &4166312570030001523
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956170458781281344}
+  m_Enabled: 1
 --- !u!1 &5118309063264922611
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +814,7 @@ Transform:
   m_GameObject: {fileID: 6505065173845598979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -17,12 +17,17 @@ public class Movement : MonoBehaviour
     private float _InputX;
     [Header("Rotation")]
     [SerializeField] private GameObject _playerVisuals;
+    [SerializeField] private GameObject _acualVisuals;
     [SerializeField] private float _setRotation = 45;
     [SerializeField] private float _rotationSpeed = 10;
 
     [Header("Camera")]
     [SerializeField] private GameObject _playerCamera;
     [SerializeField] private Vector3 _distanceFromPlayer;
+    [Header("Canvas")]
+    [SerializeField] private GameObject _restartCanvas;
+    [SerializeField] private float _canvasDelay = 10f;
+
 
     private bool _IsDead = false;
     private bool _Win = false;
@@ -105,7 +110,7 @@ public class Movement : MonoBehaviour
     }
     private void PostWinMoveCamera()
     {
-        _playerCamera.transform.position = new Vector3(_playerVisuals.transform.position.x, _playerVisuals.transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
+        _playerCamera.transform.position = new Vector3(_acualVisuals.transform.position.x, _acualVisuals.transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
     }
     private float GetSpeedUp()
     {
@@ -127,6 +132,9 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         SetRotationFloat(0);
         Cursor.visible = true;
+
+        if (_restartCanvas == null) return;
+        _restartCanvas.SetActive(true);
     }
     private void OnWin()
     {
@@ -134,5 +142,11 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         SetRotationFloat(0);
         Cursor.visible = true;
+        Invoke(nameof(SetCanvas), _canvasDelay);
+    }
+    private void SetCanvas()
+    {
+        if (_restartCanvas == null) return;
+        _restartCanvas.SetActive(true);
     }
 }
