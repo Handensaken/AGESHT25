@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -26,11 +27,13 @@ public class Movement : MonoBehaviour
     private bool _IsDead = false;
     private bool _Win = false;
     private bool _GameStarted = false;
+    float t = 0;
+
 
     void Start()
     {
         playerReference = this.gameObject;
-        
+
         rb = GetComponent<Rigidbody2D>();
 
         if (rb == null)
@@ -106,15 +109,17 @@ public class Movement : MonoBehaviour
     }
     private float GetSpeedUp()
     {
+        t += Time.deltaTime;
         if (_addedAccelerationPerCheckPoint.Count < _AccelerationAmount)
         {
-            return _upMovement + _addedAccelerationPerCheckPoint[_addedAccelerationPerCheckPoint.Count];
+            return Mathf.Lerp(rb.linearVelocityY, _upMovement + _addedAccelerationPerCheckPoint[_addedAccelerationPerCheckPoint.Count], t);
         }
         return _upMovement + _addedAccelerationPerCheckPoint[_AccelerationAmount];
     }
     public void AddAcceleration()
     {
         _AccelerationAmount++;
+        t = 0;
     }
     private void OnPlayerDeath()
     {
