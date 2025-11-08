@@ -114,9 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c538aafcb53b35448aa7a1f4bf78ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCloseDuration: 1
+  _animator: {fileID: 7482979278358797902}
   _visuals: {fileID: 2914914444371902364}
   _mouthPoint: {fileID: 6929424229071137505}
+  _playerCloseDuration: 1
   _attackMovementSpeed: 80
 --- !u!1 &2914914444371902364
 GameObject:
