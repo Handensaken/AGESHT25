@@ -540,6 +540,8 @@ MonoBehaviour:
   - 0
   - 4
   - 8
+  _playerVisuals: {fileID: 2812120257404848976}
+  _setRotation: 45
   _playerCamera: {fileID: 3545928933606854818}
   _distanceFromPlayer: {x: 0, y: 0, z: 10}
 --- !u!320 &551664110080413599
