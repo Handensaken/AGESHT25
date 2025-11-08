@@ -1,15 +1,17 @@
 using System;
+using UnityEditor.EditorTools;
 using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Moray : MonoBehaviour
 {
     [SerializeField] private float _playerCloseDuration = 1f;
     [SerializeField] private GameObject _visuals;
-    [SerializeField] private GameObject _player;
     [SerializeField] private Transform _mouthPoint;
+    [SerializeField] private float _attackMovementSpeed = 4;
     private bool _haveAttacked = false;
     private bool _startTimer = false;
     private float _timer = 0;
+    private bool _Attacking = false;
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -18,6 +20,10 @@ public class Moray : MonoBehaviour
     void Update()
     {
         if (_haveAttacked) return;
+        if (_Attacking)
+        {
+            Attacking();
+        }
 
         if (_startTimer)
         {
@@ -25,7 +31,7 @@ public class Moray : MonoBehaviour
 
             if (_timer >= _playerCloseDuration)
             {
-                Attack();
+                _Attacking = true;
             }
         }
 
@@ -33,23 +39,33 @@ public class Moray : MonoBehaviour
     }
     private void LookAtPlayer()
     {
-        if (_player == null) return;
-
-        Vector3 targ = _player.transform.position;
+        Vector3 targ = Movement.playerReference.transform.position;
         Vector3 objectPos = transform.position;
 
         targ.x = targ.x - objectPos.x;
         targ.y = targ.y - objectPos.y;
 
         float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        _visuals.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+    private void Attacking()
+    {
+        if (Vector3.Distance(_mouthPoint.position, Movement.playerReference.transform.position) > 0.2)
+        {
+            _mouthPoint.transform.position = Vector3.MoveTowards(_mouthPoint.transform.position,
+            Movement.playerReference.transform.position ,
+            _attackMovementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Attack();
+        }
     }
     private void Attack()
     {
-        Debug.Log("attack");
         GameEventsManager.instance.PlayerDeath();
         _haveAttacked = true;
-        _player.transform.position = _mouthPoint.position;
+        Movement.playerReference.transform.position = _mouthPoint.position;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

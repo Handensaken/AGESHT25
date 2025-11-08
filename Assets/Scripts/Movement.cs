@@ -1,9 +1,12 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    public static GameObject playerReference;
+
     [Header("MovementRelated")]
     [SerializeField] private float _upMovement;
     [SerializeField] private float _horizontalSpeed;
@@ -14,6 +17,7 @@ public class Movement : MonoBehaviour
     [Header("Rotation")]
     [SerializeField] private GameObject _playerVisuals;
     [SerializeField] private float _setRotation = 45;
+    [SerializeField] private float _rotationSpeed = 10;
 
     [Header("Camera")]
     [SerializeField] private GameObject _playerCamera;
@@ -25,6 +29,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        playerReference = this.gameObject;
+        
         rb = GetComponent<Rigidbody2D>();
 
         if (rb == null)
@@ -47,6 +53,7 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
+        if (!_GameStarted) return;
         if (_IsDead) return;
         if (_Win)
         {
@@ -56,32 +63,38 @@ public class Movement : MonoBehaviour
         {
             MoveCamera();
             Move();
-            SetRotation();
+            LerpRotation(_setRotation * -_InputX);
         }
     }
     public void MoveInput(InputAction.CallbackContext ctx)
     {
         _InputX = ctx.ReadValue<Vector2>().x;
     }
+    public void StartGame(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            _GameStarted = true;
+        }
+    }
     private void Move()
     {
         rb.linearVelocity = new Vector2(_InputX * _horizontalSpeed, GetSpeedUp());
     }
-    private void SetRotation()
+    private void LerpRotation(float rotation)
     {
         if (_playerVisuals == null) return;
 
-        SetRotationFloat(_setRotation * -_InputX);
-    }
+        Quaternion quaternionRot = Quaternion.Euler(new Vector3(0, 0, rotation));
 
+        _playerVisuals.transform.rotation = Quaternion.RotateTowards(_playerVisuals.transform.rotation, quaternionRot, _rotationSpeed * Time.deltaTime);
+    }
     private void SetRotationFloat(float rotation)
     {
-        Debug.Log("rotation");
         _playerVisuals.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotation));
     }
     private void MoveCamera()
     {
-        Debug.Log("we are camera");
         if (_playerCamera != null)
         {
             _playerCamera.transform.position = new Vector3(0, transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
@@ -107,6 +120,7 @@ public class Movement : MonoBehaviour
     {
         _IsDead = true;
         rb.linearVelocity = Vector3.zero;
+        SetRotationFloat(0);
         Cursor.visible = true;
     }
     private void OnWin()
