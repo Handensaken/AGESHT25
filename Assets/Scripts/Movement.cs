@@ -48,10 +48,16 @@ public class Movement : MonoBehaviour
     void Update()
     {
         if (_IsDead) return;
-        MoveCamera();
-        if (_Win) return;
-        Move();
-        SetRotation();
+        if (_Win)
+        {
+            PostWinMoveCamera();
+        }
+        else
+        {
+            MoveCamera();
+            Move();
+            SetRotation();
+        }
     }
     public void MoveInput(InputAction.CallbackContext ctx)
     {
@@ -70,14 +76,20 @@ public class Movement : MonoBehaviour
 
     private void SetRotationFloat(float rotation)
     {
+        Debug.Log("rotation");
         _playerVisuals.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotation));
     }
     private void MoveCamera()
     {
+        Debug.Log("we are camera");
         if (_playerCamera != null)
         {
             _playerCamera.transform.position = new Vector3(0, transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
         }
+    }
+    private void PostWinMoveCamera()
+    {
+        _playerCamera.transform.position = new Vector3(_playerVisuals.transform.position.x, _playerVisuals.transform.position.y + _distanceFromPlayer.y, -_distanceFromPlayer.z);
     }
     private float GetSpeedUp()
     {
