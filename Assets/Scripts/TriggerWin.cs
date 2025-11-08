@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class TriggerWin : MonoBehaviour
 {
@@ -7,6 +8,11 @@ public class TriggerWin : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameEventsManager.instance.Win();
+
+
+
+
+            collision.gameObject.GetComponent<PlayableDirector>().Play();
         }
     }
 }
