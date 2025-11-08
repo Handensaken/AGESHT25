@@ -11,11 +11,16 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private int _AccelerationAmount = 0;
     private float _InputX;
+    [Header("Rotation")]
+    [SerializeField] private GameObject _playerVisuals;
+    [SerializeField] private float _setRotation = 45;
+
     [Header("Camera")]
     [SerializeField] private GameObject _playerCamera;
     [SerializeField] private Vector3 _distanceFromPlayer;
 
     private bool _IsDead = false;
+    private bool _Win = false;
     private bool _GameStarted = false;
 
     void Start()
@@ -31,6 +36,7 @@ public class Movement : MonoBehaviour
         {
             _playerCamera.transform.parent = null;
         }
+        Cursor.visible = false;
         GameEventsManager.instance.OnPlayerDeath += OnPlayerDeath;
         GameEventsManager.instance.OnWin += OnWin;
     }
@@ -41,9 +47,10 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        if (_IsDead) return;
+        if (_IsDead || _Win) return;
         Move();
         MoveCamera();
+        SetRotation();
     }
     public void MoveInput(InputAction.CallbackContext ctx)
     {
@@ -52,6 +59,17 @@ public class Movement : MonoBehaviour
     private void Move()
     {
         rb.linearVelocity = new Vector2(_InputX * _horizontalSpeed, GetSpeedUp());
+    }
+    private void SetRotation()
+    {
+        if (_playerVisuals == null) return;
+
+        SetRotationFloat(_setRotation * -_InputX);
+    }
+
+    private void SetRotationFloat(float rotation)
+    {
+        _playerVisuals.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotation));
     }
     private void MoveCamera()
     {
@@ -76,11 +94,13 @@ public class Movement : MonoBehaviour
     {
         _IsDead = true;
         rb.linearVelocity = Vector3.zero;
+        Cursor.visible = true;
     }
     private void OnWin()
     {
-        Debug.Log("win");
-        _IsDead = true;
+        _Win = true;
         rb.linearVelocity = Vector3.zero;
+        SetRotationFloat(0);
+        Cursor.visible = true;
     }
 }

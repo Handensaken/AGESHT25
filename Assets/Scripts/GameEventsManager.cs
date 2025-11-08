@@ -4,8 +4,7 @@ using UnityEngine;
 public class GameEventsManager : MonoBehaviour
 {
     public static GameEventsManager instance { get; private set; }
-
-    public void Awake()
+    void Awake()
     {
         instance = this;
     }
