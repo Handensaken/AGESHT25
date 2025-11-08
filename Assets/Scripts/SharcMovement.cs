@@ -15,8 +15,12 @@ public class SharcMovement : MonoBehaviour
         transform.position = _startPositon.position;
         _TargetPosition = _endPositon;
 
+        Vector3 temp = _startPositon.position;
         _startPositon.transform.parent = null;
+        _startPositon.transform.position = temp;
+        temp = _endPositon.position;
         _endPositon.transform.parent = null;
+        _endPositon.transform.position = temp;
     }
     void Update()
     {
@@ -33,6 +37,13 @@ public class SharcMovement : MonoBehaviour
                 _TargetPosition = _endPositon;
             }
             _SpriteRenderer.flipX = !_SpriteRenderer.flipX;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameEventsManager.instance.PlayerDeath();
         }
     }
 }
