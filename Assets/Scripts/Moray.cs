@@ -6,6 +6,8 @@ public class Moray : MonoBehaviour
     [SerializeField] private float _playerCloseDuration = 1f;
     [SerializeField] private GameObject _visuals;
     [SerializeField] private GameObject _player;
+    [SerializeField] private Transform _mouthPoint;
+    private bool _haveAttacked = false;
     private bool _startTimer = false;
     private float _timer = 0;
     void Start()
@@ -15,6 +17,8 @@ public class Moray : MonoBehaviour
 
     void Update()
     {
+        if (_haveAttacked) return;
+
         if (_startTimer)
         {
             _timer += Time.deltaTime;
@@ -42,8 +46,10 @@ public class Moray : MonoBehaviour
     }
     private void Attack()
     {
-
         Debug.Log("attack");
+        GameEventsManager.instance.PlayerDeath();
+        _haveAttacked = true;
+        _player.transform.position = _mouthPoint.position;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

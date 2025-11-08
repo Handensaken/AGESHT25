@@ -47,9 +47,10 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        if (_IsDead || _Win) return;
-        Move();
+        if (_IsDead) return;
         MoveCamera();
+        if (_Win) return;
+        Move();
         SetRotation();
     }
     public void MoveInput(InputAction.CallbackContext ctx)
