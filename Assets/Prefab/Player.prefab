@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &940693868715448313
 Transform:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   - 0
   - 3
   - 6
-  _playerVisuals: {fileID: 2812120257404848976}
+  _playerVisuals: {fileID: 1964964488993654017}
   _setRotation: 60
   _rotationSpeed: 800
   _playerCamera: {fileID: 6505065173845598979}
