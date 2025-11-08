@@ -1,36 +1,30 @@
 fileFormatVersion: 2
-guid: d83a0a471adf013489dc8f5ad3932612
+guid: c77aa66c7c049de4789c956d4188ece3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2857995223215517250
-    second: Anglerfish spritesheet_0
+      213: -1723347213257535943
+    second: SurfaceTest_0
   - first:
-      213: -5119326311267972252
-    second: Anglerfish spritesheet_1
+      213: 5423328095489745738
+    second: SurfaceTest_1
   - first:
-      213: 4712057313626432953
-    second: Anglerfish spritesheet_2
+      213: -2494488640612453450
+    second: SurfaceTest_2
   - first:
-      213: -4076071711422947725
-    second: Anglerfish spritesheet_3
-  - first:
-      213: 8831153519312365056
-    second: Anglerfish spritesheet_4
-  - first:
-      213: 8227456619532047237
-    second: Anglerfish spritesheet_5
+      213: -8910878225009778523
+    second: SurfaceTest_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
-    borderMipMap: 1
+    borderMipMap: 0
     mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 1000
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -61,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,11 +66,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
-  textureShape: 4
+  textureType: 8
+  textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
-  flipbookColumns: 4
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -90,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,19 +94,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -150,142 +131,106 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Anglerfish spritesheet_0
+      name: SurfaceTest_0
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 1808
+        width: 171
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e002917d07518e0800000000000000
+      internalID: -1723347213257535943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SurfaceTest_1
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1851
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43ef083b28834b40800000000000000
+      internalID: 5423328095489745738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SurfaceTest_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1843
+        width: 45
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b33c083ccbc16dd0800000000000000
+      internalID: -2494488640612453450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SurfaceTest_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 375
-        height: 900
+        width: 2048
+        height: 1422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 3.5, y: -400.5}
-        - {x: 180.5, y: -407.5}
-        - {x: 187.5, y: -135.5}
-        - {x: 187.5, y: 0}
-        - {x: 120.5, y: 292.5}
-        - {x: 0, y: 450}
-        - {x: -37.5, y: 435.5}
-        - {x: -187.5, y: 313.5}
-        - {x: -187.5, y: -118.5}
-      physicsShape:
-      - - {x: 0, y: -450}
-        - {x: 187.5, y: 0}
-        - {x: 0, y: 450}
-        - {x: -187.5, y: 0}
-      tessellationDetail: 0
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
       bones: []
-      spriteID: eb1d97e9c7c5658d0800000000000000
-      internalID: -2857995223215517250
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anglerfish spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 375
-        y: 0
-        width: 375
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: 0, y: -450}
-        - {x: 139.5, y: -415.5}
-        - {x: 187.5, y: -150.5}
-        - {x: 157.5, y: 280.5}
-        - {x: 0, y: 450}
-        - {x: -63.5, y: 431.5}
-        - {x: -187.5, y: 265.5}
-        - {x: -187.5, y: -173.5}
-      physicsShape:
-      - - {x: 0, y: -450}
-        - {x: 187.5, y: 0}
-        - {x: 0, y: 450}
-        - {x: -187.5, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46bcf8fd7df74f8b0800000000000000
-      internalID: -5119326311267972252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anglerfish spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 750
-        y: 0
-        width: 375
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: -148.5, y: -435.5}
-        - {x: 2.5, y: -429.5}
-        - {x: 186.5, y: -109.5}
-        - {x: 183.5, y: 201.5}
-        - {x: 31.5, y: 435.5}
-        - {x: -60.5, y: 435.5}
-        - {x: -187.5, y: 255.5}
-        - {x: -187.5, y: -159.5}
-      physicsShape:
-      - - {x: 0, y: -450}
-        - {x: 187.5, y: 0}
-        - {x: 0, y: 450}
-        - {x: -187.5, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b52cf34927946140800000000000000
-      internalID: 4712057313626432953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anglerfish spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 1125
-        y: 0
-        width: 375
-        height: 900
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: -183.5, y: -435.5}
-        - {x: 166.5, y: -145.5}
-        - {x: 187.5, y: 0}
-        - {x: 128.5, y: 305.5}
-        - {x: 0, y: 450}
-        - {x: -63.5, y: 430.5}
-        - {x: -181.5, y: 247.5}
-        - {x: -187.5, y: 0}
-      physicsShape:
-      - - {x: 0, y: -450}
-        - {x: 187.5, y: 0}
-        - {x: 0, y: 450}
-        - {x: -187.5, y: 0}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37edd99df52ee67c0800000000000000
-      internalID: -4076071711422947725
+      spriteID: 5a067895773365480800000000000000
+      internalID: -8910878225009778523
       vertices: []
       indices: 
       edges: []
@@ -294,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: df9677f7f9b65014798717aeb1d6dfaa
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -304,10 +249,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Anglerfish spritesheet_0: -2857995223215517250
-      Anglerfish spritesheet_1: -5119326311267972252
-      Anglerfish spritesheet_2: 4712057313626432953
-      Anglerfish spritesheet_3: -4076071711422947725
+      SurfaceTest_0: -1723347213257535943
+      SurfaceTest_1: 5423328095489745738
+      SurfaceTest_2: -2494488640612453450
+      SurfaceTest_3: -8910878225009778523
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

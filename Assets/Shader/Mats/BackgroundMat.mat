@@ -36,6 +36,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _CameraSortingLayerTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e611a7af53384e16b5dc7809374884f0_Texture_1_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -49,7 +57,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _BodyTrans: 1
+    - _CasuticScale: 1.2
+    - _CasuticStrength: 1.4
+    - _CausticOffsetSpeed: 0
+    - _CausticPower: 1.5
+    - _DistortionOffsetSpeed: 1
+    - _DistortionScale: 30
+    - _DistortionStrength: 0.0025
+    m_Colors:
+    - _CasuticClr: {r: 0.44968545, g: 0.8376141, b: 1, a: 0}
+    - _CasuticScrollDir: {r: 0, g: 0, b: 0, a: 0}
+    - _CausticTIling: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortionDir: {r: 0.05, g: 0, b: 0, a: 0}
+    - _SurfaceClr: {r: 0.7515723, g: 0.90781176, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
