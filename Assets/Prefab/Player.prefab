@@ -183,7 +183,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2812120257404848976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a1e2984fe1b4ec541b1704beac6bc01a, type: 2}
   m_CullingMode: 0
@@ -454,6 +454,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8633702029750043481}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 972eb358-76f7-4a70-99b3-ef40505a2842
+    m_ActionName: 'Player/Start[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -521,7 +537,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8633702029750043481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,7 +558,8 @@ MonoBehaviour:
   - 8
   _playerVisuals: {fileID: 2812120257404848976}
   _setRotation: 45
-  _playerCamera: {fileID: 3545928933606854818}
+  _rotationSpeed: 400
+  _playerCamera: {fileID: 6505065173845598979}
   _distanceFromPlayer: {x: 0, y: 0, z: 10}
 --- !u!320 &551664110080413599
 PlayableDirector:
@@ -570,6 +587,10 @@ PlayableDirector:
   - key: {fileID: 5747779361857565428, guid: 08692c3472d852249ae987497634e3d5, type: 2}
     value: {fileID: 0}
   - key: {fileID: -2154566502181176260, guid: 08692c3472d852249ae987497634e3d5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 947987656311639616, guid: 08692c3472d852249ae987497634e3d5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4296103919525542362, guid: 08692c3472d852249ae987497634e3d5, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []

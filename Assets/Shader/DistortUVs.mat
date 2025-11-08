@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8570117267849963614
+--- !u!114 &-498869232647805894
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ocean
-  m_Shader: {fileID: -6465566751694194690, guid: 3e8294ee2c774e246b585f3d4fc46add, type: 3}
+  m_Name: DistortUVs
+  m_Shader: {fileID: -6465566751694194690, guid: c17a8d0ea8433644d934f4e92b4acf12, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,7 +29,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 5000
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -37,15 +37,11 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _CameraOpaqueTexture:
-        m_Texture: {fileID: 0}
+    - _Bitch:
+        m_Texture: {fileID: 8400000, guid: 68053d97cf79dfa4da693510f7179f01, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CameraSortingLayerTexture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e611a7af53384e16b5dc7809374884f0_Texture_1_Texture2D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -63,25 +59,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BodyTrans: 0
-    - _CasuticScale: 10
-    - _CasuticStrength: 0.37
-    - _CausticOffsetSpeed: 1
-    - _CausticPower: 6.9
-    - _DistortionOffsetSpeed: 10
-    - _DistortionScale: 50
-    - _DistortionStrength: 0.5
     - _QueueControl: 1
     - _QueueOffset: 0
-    - _WaveCount: 2949
-    - _WaveFlowDirection: -0.16
-    - _WaveSize: 0.00005
-    - _WaveSpeed: 0.005
-    m_Colors:
-    - _CasuticClr: {r: 0.1668644, g: 0.606588, b: 0.899371, a: 1}
-    - _CasuticScrollDir: {r: 0.045, g: 0, b: 0, a: 0}
-    - _CausticTIling: {r: 5, g: 28.125, b: 0, a: 0}
-    - _DistortionDir: {r: 1, g: 0, b: 0, a: 0}
-    - _SurfaceClr: {r: 0.6635219, g: 0.8234193, b: 1, a: 1}
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
