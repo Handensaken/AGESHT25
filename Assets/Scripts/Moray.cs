@@ -27,6 +27,8 @@ public class Moray : MonoBehaviour
 
         if (_startTimer)
         {
+            LookAtPlayer();
+
             _timer += Time.deltaTime;
 
             if (_timer >= _playerCloseDuration)
@@ -34,8 +36,6 @@ public class Moray : MonoBehaviour
                 _Attacking = true;
             }
         }
-
-        LookAtPlayer();
     }
     private void LookAtPlayer()
     {
@@ -53,7 +53,7 @@ public class Moray : MonoBehaviour
         if (Vector3.Distance(_mouthPoint.position, Movement.playerReference.transform.position) > 0.2)
         {
             _mouthPoint.transform.position = Vector3.MoveTowards(_mouthPoint.transform.position,
-            Movement.playerReference.transform.position ,
+            Movement.playerReference.transform.position,
             _attackMovementSpeed * Time.deltaTime);
         }
         else

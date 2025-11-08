@@ -25,6 +25,7 @@ public class MineVFXActivation : MonoBehaviour
     float time = 0;
     private IEnumerator gababa()
     {
+        Debug.Log("bangInrmator");
         while (time < 1)
         {
             time += Time.deltaTime * 5;

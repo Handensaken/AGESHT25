@@ -8,6 +8,7 @@ public class SharcMovement : MonoBehaviour
     [SerializeField] private float _distanceCutOff = 1f;
     private Transform _TargetPosition;
     private SpriteRenderer _SpriteRenderer;
+    private float _ZScale;
     void Start()
     {
         _SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,6 +22,8 @@ public class SharcMovement : MonoBehaviour
         temp = _endPositon.position;
         _endPositon.transform.parent = null;
         _endPositon.transform.position = temp;
+
+        _ZScale = transform.localScale.z;
     }
     void Update()
     {
@@ -36,7 +39,9 @@ public class SharcMovement : MonoBehaviour
             {
                 _TargetPosition = _endPositon;
             }
-            _SpriteRenderer.flipX = !_SpriteRenderer.flipX;
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
