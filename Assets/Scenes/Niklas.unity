@@ -2806,10 +2806,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3226488994916083788, guid: 0d7a27165e8289a449acf1cd362479a6, type: 3}
-      propertyPath: _loseSceneLoadDelay
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3509133024066997188, guid: 0d7a27165e8289a449acf1cd362479a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2853,10 +2849,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3223091191817495703, guid: 0d7a27165e8289a449acf1cd362479a6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2108545459}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7a27165e8289a449acf1cd362479a6, type: 3}
 --- !u!1001 &1203595935
 PrefabInstance:
@@ -2869,6 +2862,10 @@ PrefabInstance:
     - target: {fileID: 2862163261133975497, guid: c5d74ef568856424e950f3efacd673a5, type: 3}
       propertyPath: m_Name
       value: Moray
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343308947389554394, guid: c5d74ef568856424e950f3efacd673a5, type: 3}
+      propertyPath: _playerCloseDuration
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9015977665090645039, guid: c5d74ef568856424e950f3efacd673a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5009,24 +5006,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2024138941}
   m_SourcePrefab: {fileID: 100100000, guid: b712b0827f835a2448ab541bee78df8b, type: 3}
---- !u!1 &2108545455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3223091191817495703, guid: 0d7a27165e8289a449acf1cd362479a6, type: 3}
-  m_PrefabInstance: {fileID: 1197808892}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2108545459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108545455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bac3ca9fae1245740aba761764ec1ac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material: {fileID: 2100000, guid: 0598065011615a440b4877e0713519e6, type: 2}
 --- !u!1 &2108891213
 GameObject:
   m_ObjectHideFlags: 0

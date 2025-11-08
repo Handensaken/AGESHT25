@@ -4,9 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Moray : MonoBehaviour
 {
-    [SerializeField] private float _playerCloseDuration = 1f;
+    [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _visuals;
     [SerializeField] private Transform _mouthPoint;
+    [SerializeField] private float _playerCloseDuration = 1f;
     [SerializeField] private float _attackMovementSpeed = 4;
     private bool _haveAttacked = false;
     private bool _startTimer = false;
@@ -50,7 +51,7 @@ public class Moray : MonoBehaviour
     }
     private void Attacking()
     {
-        if (Vector3.Distance(_mouthPoint.position, Movement.playerReference.transform.position) > 0.2)
+        if (Vector3.Distance(_mouthPoint.position, Movement.playerReference.transform.position) > 0.1)
         {
             _mouthPoint.transform.position = Vector3.MoveTowards(_mouthPoint.transform.position,
             Movement.playerReference.transform.position,
@@ -64,6 +65,7 @@ public class Moray : MonoBehaviour
     private void Attack()
     {
         GameEventsManager.instance.PlayerDeath();
+        _animator.SetTrigger("Bite");
         _haveAttacked = true;
         Movement.playerReference.transform.position = _mouthPoint.position;
     }
@@ -72,6 +74,7 @@ public class Moray : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             _startTimer = true;
+            _animator.SetTrigger("Prep");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -80,6 +83,7 @@ public class Moray : MonoBehaviour
         {
             _startTimer = false;
             _timer = 0;
+            _animator.SetTrigger("Cancel");
         }
     }
 }
