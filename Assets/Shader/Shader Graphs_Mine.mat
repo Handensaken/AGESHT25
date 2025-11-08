@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-498869232647805894
+--- !u!114 &-5091193525733943891
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DistortUVs
-  m_Shader: {fileID: -6465566751694194690, guid: c17a8d0ea8433644d934f4e92b4acf12, type: 3}
+  m_Name: Shader Graphs_Mine
+  m_Shader: {fileID: -6465566751694194690, guid: 53c63cd3c10571046a6aec2d0a08fa60, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,20 +29,23 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Bitch:
-        m_Texture: {fileID: 8400000, guid: 68053d97cf79dfa4da693510f7179f01, type: 2}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: c7874d4dce114244ab4bff5a5ec3f5e6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _CameraSortingLayerTexture:
-        m_Texture: {fileID: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c00a8de88727a3b4b81e9305f7f0443c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_Array:
+        m_Texture: {fileID: 18700000, guid: d83a0a471adf013489dc8f5ad3932612, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -58,9 +61,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _QueueControl: 1
-    - _QueueOffset: 0
-    m_Colors: []
+    m_Floats: []
+    m_Colors:
+    - _EmissionColor: {r: 57.333767, g: 17.110075, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
