@@ -551,16 +551,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upMovement: 2
-  _horizontalSpeed: 5
+  _horizontalSpeed: 7
   _addedAccelerationPerCheckPoint:
   - 0
-  - 4
-  - 8
+  - 3
+  - 6
   _playerVisuals: {fileID: 2812120257404848976}
   _setRotation: 45
   _rotationSpeed: 400
   _playerCamera: {fileID: 6505065173845598979}
-  _distanceFromPlayer: {x: 0, y: 0, z: 10}
+  _distanceFromPlayer: {x: 0, y: 2, z: 10}
 --- !u!320 &551664110080413599
 PlayableDirector:
   m_ObjectHideFlags: 0
