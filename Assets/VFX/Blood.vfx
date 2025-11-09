@@ -24,9 +24,7 @@ MonoBehaviour:
   m_Label: Spawn System
   m_Data: {fileID: 8926484042661614529}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614613}
-      slotIndex: 0
+  - link: []
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -214,9 +212,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 551
-    y: -523
-    width: 651
-    height: 2257
+    y: -669
+    width: 619
+    height: 2403
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3154,9 +3152,7 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 114023846229194376}
-      slotIndex: 0
+  - link: []
   eventName: Blood
 --- !u!114 &8926484042661614614
 MonoBehaviour:
