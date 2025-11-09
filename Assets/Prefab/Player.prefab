@@ -26,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 405466017538728457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.11, y: -2.08, z: 0}
+  m_LocalPosition: {x: -1.11, y: 0.91999817, z: 0}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 7894725869821626406}
+  m_Father: {fileID: 1239309729849350434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7927648318396268231
 SpriteRenderer:
@@ -148,6 +148,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2911592017971310374}
+  - {fileID: 940693868715448313}
   m_Father: {fileID: 2729321353559409533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2812120257404848976
@@ -540,7 +541,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d18c433f0b4f39d4fa5ac49660df161b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -622,6 +623,7 @@ MonoBehaviour:
   _distanceFromPlayer: {x: 0, y: 2, z: 10}
   _restartCanvas: {fileID: 0}
   _canvasDelay: 7
+  _theMaterial: {fileID: 405466017538728457}
 --- !u!320 &551664110080413599
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -822,7 +824,6 @@ Transform:
   m_Children:
   - {fileID: 708999445152128405}
   - {fileID: 614574793479404967}
-  - {fileID: 940693868715448313}
   m_Father: {fileID: 2729321353559409533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7572566768858208783
