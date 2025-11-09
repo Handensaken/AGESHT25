@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     public static GameObject playerReference;
+    [SerializeField] private Animator _playerAnimator;
 
     [Header("MovementRelated")]
     [SerializeField] private float _upMovement;
@@ -161,6 +162,11 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         SetRotationFloat(0);
         Cursor.visible = true;
+
+        if (_playerAnimator != null)
+        {
+            _playerAnimator.SetTrigger("Hurt");
+        }
 
         if (_theMaterial != null)
         {
