@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Size: 0.86
+    - _Size: 0.83
     - _Smoothness: 1.33
     m_Colors:
     - _ClrTest: {r: 0.030477392, g: 0.2871602, b: 0.42138356, a: 0}
