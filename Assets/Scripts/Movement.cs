@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,13 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rb;
     private int _AccelerationAmount = 0;
     private float _InputX;
+    [Header("Dashing")]
+    [SerializeField] private float _dashSetSpeed;
+    [SerializeField] private float _dashDuration = 1f;
+    [SerializeField] private float _DashCoolDown = 5f;
+    private bool _Dashing = false;
+    private float _DashTimer = 0;
+
     [Header("Rotation")]
     [SerializeField] private GameObject _playerVisuals;
     [SerializeField] private GameObject _acualVisuals;
@@ -38,6 +46,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         playerReference = this.gameObject;
+
+        _DashTimer = 100;
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -73,9 +83,16 @@ public class Movement : MonoBehaviour
             Move();
             LerpRotation(_setRotation * -_InputX);
         }
+
+        _DashTimer += Time.deltaTime;
     }
     public void MoveInput(InputAction.CallbackContext ctx)
     {
+        if (ctx.ReadValue<Vector2>().y > 0.7 && _DashTimer > _DashCoolDown)
+        {
+            SetDash();
+            Invoke(nameof(ResetDash), _dashDuration);
+        }
         _InputX = ctx.ReadValue<Vector2>().x;
     }
     public void StartGame(InputAction.CallbackContext ctx)
@@ -87,7 +104,8 @@ public class Movement : MonoBehaviour
     }
     private void Move()
     {
-        rb.linearVelocity = new Vector2(_InputX * _horizontalSpeed, GetSpeedUp());
+        rb.linearVelocity = new Vector2(_InputX * _horizontalSpeed,
+        GetSpeedUp() * (_Dashing ? _dashSetSpeed : 1));
     }
     private void LerpRotation(float rotation)
     {
@@ -125,6 +143,15 @@ public class Movement : MonoBehaviour
     {
         _AccelerationAmount++;
         t = 0;
+    }
+    private void SetDash()
+    {
+        _Dashing = true;
+        _DashTimer = 0;
+    }
+    private void ResetDash()
+    {
+        _Dashing = false;
     }
     private void OnPlayerDeath()
     {

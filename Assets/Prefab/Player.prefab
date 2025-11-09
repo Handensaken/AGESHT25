@@ -612,6 +612,9 @@ MonoBehaviour:
   - 0
   - 3
   - 6
+  _dashSetSpeed: 4
+  _dashDuration: 0.35
+  _DashCoolDown: 5
   _playerVisuals: {fileID: 1964964488993654017}
   _acualVisuals: {fileID: 2812120257404848976}
   _setRotation: 60
