@@ -2,13 +2,16 @@ using UnityEngine;
 
 public class SharcMovement : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private Transform _startPositon;
     [SerializeField] private Transform _endPositon;
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _distanceCutOff = 1f;
     private Transform _TargetPosition;
-    private SpriteRenderer _SpriteRenderer;
     private float _ZScale;
+    [Header("VFX")]
+    [SerializeField] private GameObject _bloodObject;
+    private SpriteRenderer _SpriteRenderer;
     void Start()
     {
         _SpriteRenderer = GetComponent<SpriteRenderer>();
@@ -49,6 +52,11 @@ public class SharcMovement : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GameEventsManager.instance.PlayerDeath();
+
+            if ( _bloodObject != null)
+            {
+                Instantiate(_bloodObject, Movement.playerReference.transform.position, Quaternion.identity);
+            }
         }
     }
 }
