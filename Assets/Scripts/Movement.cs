@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
 
 public class Movement : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _dashSetSpeed;
     [SerializeField] private float _dashDuration = 1f;
     [SerializeField] private float _DashCoolDown = 5f;
+    [SerializeField] private Image _dashImage;
     private bool _Dashing = false;
     private float _DashTimer = 0;
 
@@ -86,7 +87,17 @@ public class Movement : MonoBehaviour
             Move();
             LerpRotation(_setRotation * -_InputX);
         }
-
+        if (_dashImage != null)
+        {
+            if (_Dashing)
+            {
+                _dashImage.fillAmount = 1;
+            }
+            else
+            {
+                _dashImage.fillAmount = _DashTimer / _DashCoolDown;
+            }
+        }
         _DashTimer += Time.deltaTime;
     }
     public void MoveInput(InputAction.CallbackContext ctx)
