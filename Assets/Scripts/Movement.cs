@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
     [Header("Canvas")]
     [SerializeField] private GameObject _restartCanvas;
     [SerializeField] private float _canvasDelay = 10f;
+    [Header("THE MATERIAL")]
+    [SerializeField] private GameObject _theMaterial;
 
 
     private bool _IsDead = false;
@@ -159,6 +161,11 @@ public class Movement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         SetRotationFloat(0);
         Cursor.visible = true;
+
+        if (_theMaterial != null)
+        {
+            _theMaterial.transform.parent = null;
+        }
 
         if (_restartCanvas == null) return;
         _restartCanvas.SetActive(true);
