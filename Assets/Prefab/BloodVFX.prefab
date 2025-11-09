@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 6278310873507210336}
   - component: {fileID: 8794584194805416599}
   - component: {fileID: 6992372750467575837}
-  - component: {fileID: 4013788928315202392}
-  - component: {fileID: 402946780455499777}
   m_Layer: 0
   m_Name: BloodVFX
   m_TagString: Untagged
@@ -119,35 +117,3 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4013788928315202392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8608116413099143918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 402946780455499777}
-  m_VisualEffect: {fileID: 8794584194805416599}
---- !u!114 &402946780455499777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8608116413099143918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c3070554d0a8944a95ff8f018c2c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Space: 1
-  m_Property:
-    m_Name: playerpos_position
-  Target: {fileID: 0}
