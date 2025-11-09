@@ -606,6 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef40df3eab5cbf4a8ecdffe264e83f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAnimator: {fileID: 3381793377930453516}
   _upMovement: 2
   _horizontalSpeed: 7
   _addedAccelerationPerCheckPoint:
