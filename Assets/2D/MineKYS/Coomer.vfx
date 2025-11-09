@@ -72,7 +72,7 @@ MonoBehaviour:
   useAlphaClipping: 0
   generateMotionVector: 0
   excludeFromTUAndAA: 0
-  sortingPriority: 1
+  sortingPriority: -1
   m_SubOutputs:
   - {fileID: 8926484042661614528}
   - {fileID: 8926484042661614538}
