@@ -7,12 +7,15 @@ public class Moray : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private GameObject _visuals;
     [SerializeField] private Transform _mouthPoint;
+    [SerializeField] private Transform _mouthPointPoint;
     [SerializeField] private float _playerCloseDuration = 1f;
     [SerializeField] private float _attackMovementSpeed = 4;
     private bool _haveAttacked = false;
     private bool _startTimer = false;
     private float _timer = 0;
     private bool _Attacking = false;
+    [Header("VFX")]
+    [SerializeField] private GameObject _bloodObject;
     void Start()
     {
         GetComponent<Collider2D>().isTrigger = true;
@@ -68,6 +71,12 @@ public class Moray : MonoBehaviour
         _animator.SetTrigger("Bite");
         _haveAttacked = true;
         Movement.playerReference.transform.position = _mouthPoint.position;
+        Movement.playerReference.transform.parent = _mouthPointPoint.transform;
+
+        if (_bloodObject != null)
+        {
+            Instantiate(_bloodObject, _mouthPoint.transform.position, Quaternion.identity);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
